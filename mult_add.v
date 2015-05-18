@@ -11,7 +11,7 @@ ______________  \/  \/ | \/ | ______________
 	
 --Version:VERA.1.0.0
 --Data modified:
---author:Young-Œ‚√˜
+--author:Young-√é√¢√É√∑
 --E-mail: wmy367@Gmail.com
 --Data created:2015/5/15
 ________________________________________________________
@@ -49,7 +49,7 @@ wire[DSIZE:0] sdata [(WLEN+WMOD)-1:0];
 genvar II;
 generate 
 for(II=0;II<WLEN;II=II+1)begin:GEN_ADD
-assign	sdata[II]	= wdata[(II*2)*DSIZE+:DSIZE] + wdata[((II*2)+1)*DSIZE+:DSIZE];
+assign	sdata[II]	= wdata[(II*2)*DSIZE+:DSIZE] + wdata[((II*2)+1)*DSIZE+:DSIZE]; // [BASE+:8] == [(BASE+8)-1:BASE]
 end
 endgenerate
 
